@@ -1,3 +1,28 @@
+// const ProductManager = require('./productManager');
+// const express = require('express')
+
+// const app = express();
+// const PORT = 8080;
+
+// const server = app.listen(PORT, () =>  {
+//     console.log('Server listening in port ', PORT)
+// })
+
+
+
+
+
+// app.get('/products', (req, res) => {
+
+// })
+
+
+
+
+// const ProductManagerTest1 = new ProductManager();
+
+
+
 const ProductManager = require('./productManager');
 
 const ProductManagerTest1 = new ProductManager();

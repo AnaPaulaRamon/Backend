@@ -1,0 +1,11 @@
+[
+  {
+    "id": "ZN8S8hL",
+    "title": "apples",
+    "description": "red apples",
+    "price": 100,
+    "thumbnail": "No image",
+    "code": "abc1",
+    "stock": 25
+  }
+]

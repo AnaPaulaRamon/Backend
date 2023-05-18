@@ -1,11 +1,92 @@
 [
   {
-    "id": "HzkHhN8",
-    "title": "producto prueba",
-    "description": "Este es un producto prueba",
-    "price": 200,
-    "thumbnail": "Sin imagen",
-    "code": "abc123",
+    "id": "ZN8S8hL",
+    "title": "apples",
+    "description": "red apples",
+    "price": 100,
+    "thumbnail": "No image",
+    "code": "abc1",
     "stock": 25
+  },
+  {
+    "id": "OcA7Orc",
+    "title": "pears",
+    "description": "yellow pears",
+    "price": 200,
+    "thumbnail": "No image",
+    "code": "abc2",
+    "stock": 26
+  },
+  {
+    "id": "WgQyS1S",
+    "title": "peaches",
+    "description": "small peaches",
+    "price": 150,
+    "thumbnail": "No image",
+    "code": "abc3",
+    "stock": 27
+  },
+  {
+    "id": "j5u6o8p",
+    "title": "apricots",
+    "description": "canadian apricots",
+    "price": 320,
+    "thumbnail": "No image",
+    "code": "abc4",
+    "stock": 24
+  },
+  {
+    "id": "ig9fLV8",
+    "title": "watermelons",
+    "description": "cuban watermelons",
+    "price": 850,
+    "thumbnail": "No image",
+    "code": "abc5",
+    "stock": 20
+  },
+  {
+    "id": "2xBeoP9",
+    "title": "pineapple",
+    "description": "hawaiian pineapples",
+    "price": 550,
+    "thumbnail": "No image",
+    "code": "abc6",
+    "stock": 28
+  },
+  {
+    "id": "2M9wH4b",
+    "title": "kiwis",
+    "description": "medium kiwis",
+    "price": 650,
+    "thumbnail": "No image",
+    "code": "abc7",
+    "stock": 32
+  },
+  {
+    "id": "Jyxpu0R",
+    "title": "bananas",
+    "description": "small bananas",
+    "price": 250,
+    "thumbnail": "No image",
+    "code": "abc8",
+    "stock": 150
+  },
+  {
+    "id": "SLfLLtP",
+    "title": "coconuts",
+    "description": "nigerian coconuts",
+    "price": 450,
+    "thumbnail": "No image",
+    "code": "abc9",
+    "stock": 56
+  },
+  {
+    "id": "M9Vrndf",
+    "title": "grapefruits",
+    "description": "big grapefruits",
+    "price": 750,
+    "thumbnail": "No image",
+    "code": "abc10",
+    "stock": 17
   }
 ]
