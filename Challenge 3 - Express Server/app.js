@@ -1,62 +1,48 @@
-// const ProductManager = require('./productManager');
-// const express = require('express')
+const express = require('express')
+const Manager = require('./productManager');
 
-// const app = express();
-// const PORT = 8080;
+const app = express();
+const PORT = 8080;
 
-// const server = app.listen(PORT, () =>  {
-//     console.log('Server listening in port ', PORT)
-// })
-
-
-
-
-
-// app.get('/products', (req, res) => {
-
-// })
-
-
-
-
-// const ProductManagerTest1 = new ProductManager();
-
-
-
-const ProductManager = require('./productManager');
-
-const ProductManagerTest1 = new ProductManager();
-
-// ProductManagerTest1.getProducts()
-//     .then(result => {
-//         console.log(result.message)
-//     })
-
-ProductManagerTest1.addProduct(
-    'grapefruits',
-    'big grapefruits',
-    750,
-    'No image',
-    'abc10',
-    17
-).then(result => {
-    console.log(result.message)
+const server = app.listen(PORT, () =>  {
+    console.log('Server listening in port ', PORT)
 })
 
-// ProductManagerTest1.getProductById('moMdMPo')
-//     .then(result => {
-//         console.log(result.message)
-//     })
+const ProductManager = new Manager();
 
-// const fields = {thumbnail: "No image", code: "123456"}
+app.get('/products', (req, res) => {
+    // Check if there's a query
+    if(req.query && req.query.limit) {
+        let numberProducts = req.query.limit;
 
-// ProductManagerTest1.updateProduct('moMdMPo', 
-// JSON.stringify(fields, null, 2))
-//     .then(result => {
-//         console.log(result.message)
-//     })
+        ProductManager.getProducts().then(result => {
+            if(result.status === 'success') {
+                let products = result.message;
+                products = JSON.parse(products)
+                products = products.slice(0,numberProducts)
+                res.send(products)
+            } else {
+                res.status(500).send('No products available')
+            }
+        })
+    } else {
+        // If no query, then return all objects
+        ProductManager.getProducts().then(result => {
+            if(result.status === 'success') {
+                let products = result.message;
+                res.send(products)
+            } else {
+                res.status(500).send('No products available')
+            }
+        })
+    }
+})
 
-// ProductManagerTest1.deleteProduct('HzkHhN8')
-//     .then(result => {
-//         console.log(result.message)
-//     })
+app.get('/products/:pid', (req, res) => {
+    let id = req.params.pid;
+    id = parseInt(id);
+    ProductManager.getProductById(id).then(result => {
+        res.send(result);
+    })
+})
+
