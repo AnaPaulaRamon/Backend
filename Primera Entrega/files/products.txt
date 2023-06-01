@@ -1,0 +1,136 @@
+[
+  {
+    "id": "ZN8S8hL",
+    "title": "apples",
+    "description": "red apples",
+    "price": 100,
+    "thumbnail": "No image",
+    "code": "abc1",
+    "stock": 25,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": "OcA7Orc",
+    "title": "pears",
+    "description": "yellow pears",
+    "price": 180,
+    "thumbnail": "No image",
+    "code": "abc2",
+    "stock": 22,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": 2,
+    "title": "peaches",
+    "description": "small peaches",
+    "price": 150,
+    "thumbnail": "No image",
+    "code": "abc3",
+    "stock": 27,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": "j5u6o8p",
+    "title": "apricots",
+    "description": "canadian apricots",
+    "price": 320,
+    "thumbnail": "No image",
+    "code": "abc4",
+    "stock": 24,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": "ig9fLV8",
+    "title": "watermelons",
+    "description": "cuban watermelons",
+    "price": 850,
+    "thumbnail": "No image",
+    "code": "abc5",
+    "stock": 20,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": "2xBeoP9",
+    "title": "pineapple",
+    "description": "hawaiian pineapples",
+    "price": 550,
+    "thumbnail": "No image",
+    "code": "abc6",
+    "stock": 28,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": "2M9wH4b",
+    "title": "kiwis",
+    "description": "medium kiwis",
+    "price": 650,
+    "thumbnail": "No image",
+    "code": "abc7",
+    "stock": 32,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": "Jyxpu0R",
+    "title": "bananas",
+    "description": "small bananas",
+    "price": 250,
+    "thumbnail": "No image",
+    "code": "abc8",
+    "stock": 150,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": "SLfLLtP",
+    "title": "coconuts",
+    "description": "nigerian coconuts",
+    "price": 450,
+    "thumbnail": "No image",
+    "code": "abc9",
+    "stock": 56,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": "M9Vrndf",
+    "title": "grapefruits",
+    "description": "big grapefruits",
+    "price": 750,
+    "thumbnail": "No image",
+    "code": "abc10",
+    "stock": 17,
+    "status": true,
+    "category": "fruit",
+    "thumbnails": []
+  },
+  {
+    "id": "LdUE36C",
+    "title": "eggplant",
+    "description": "taiwanese eggplant",
+    "code": "abc11",
+    "price": 90,
+    "status": true,
+    "stock": 31,
+    "category": "fruit",
+    "thumbnails": [
+      "https://www.marthastewart.com/thmb/1-p15KDP82_USLv-gmeIbeOPMWY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/eggplant-glossary-085-d110486-0515_vert-horiz-1222-2000-2c46abcbfade45d8a7a4670d85b6b690.jpg",
+      "https://www.bhg.com/thmb/r-lR28BUp5Q905DB5VWVAvUlqX0=/1338x0/filters:no_upscale():strip_icc()/eggplants-paper-table-1f665836-38a0108c1bcf46d1a36ec35e899e9ecd.jpg"
+    ]
+  }
+]
