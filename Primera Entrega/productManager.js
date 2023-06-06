@@ -3,7 +3,7 @@ const makeId = require('./utils')
 
 class ProductManager {
     constructor() {
-        this.path = './files/products.txt'
+        this.path = './files/products.json'
     }
 
     async readProducts() {

@@ -1,5 +1,6 @@
 const express = require('express')
 const Manager = require('./productManager');
+const cManager = require('./cartManager');
 
 const app = express();
 const PORT = 8080;
@@ -13,6 +14,7 @@ app.use(express.urlencoded({extended: true}));
 
 
 const ProductManager = new Manager();
+const CartManager = new cManager();
 
 
 // ********PRODUCTS*********
@@ -47,7 +49,14 @@ app.get('/api/products', (req, res) => {
 
 app.get('/api/products/:pid', (req, res) => {
     let id = req.params.pid;
-    id = parseInt(id);
+    function containsOnlyNumbers(str) {
+        return /^[0-9]+$/.test(str);
+      }
+
+    if(containsOnlyNumbers(id)) {
+        id = parseInt(id);
+    }
+
     ProductManager.getProductById(id).then(result => {
         res.send(result);
     })
@@ -60,7 +69,7 @@ app.post('/api/products', (req, res) => {
             res.send(result)
         })
     } else {
-        res.send('No product specified')
+        res.send('Cart not specified')
     }
 })
 
@@ -93,3 +102,64 @@ app.delete('/api/products/:pid', (req, res) => {
 
 
 // ********CARTS*********
+
+app.get('/api/carts', (req, res) => {
+    // Check if there's a query
+    if(req.query && req.query.limit) {
+        let numberCarts = req.query.limit;
+
+        CartManager.getCarts().then(result => {
+            if(result.status === 'success') {
+                let carts = result.message;
+                carts = JSON.parse(carts)
+                carts = carts.slice(0,numberCarts)
+                res.send(carts)
+            } else {
+                res.status(500).send('No carts available')
+            }
+        })
+    } else {
+        // If no query, then return all objects
+        CartManager.getCarts().then(result => {
+            if(result.status === 'success') {
+                let carts = result.message;
+                res.send(carts)
+            } else {
+                res.status(500).send('No carts available')
+            }
+        })
+    }
+})
+
+
+app.get('/api/carts/:cid', (req, res) => {
+    let id = req.params.cid;
+
+    CartManager.getCartById(id).then(result => {
+        res.send(result);
+    })
+})
+
+app.post('/api/carts', (req, res) => {
+    let body = req.body;
+    if(body) {
+        CartManager.addCart(body).then(result => {
+            res.send(result)
+        })
+    } else {
+        res.send('Cart not specified')
+    }
+})
+
+app.post('/api/carts/:cid/product/:pid', (req, res) => {
+    let cartId = req.params.cid;
+    let prodId = req.params.pid;
+
+    if(cartId && prodId) {
+        CartManager.addProductToCart(cartId, prodId).then(result => {
+            res.send(result)
+        })
+    } else {
+        res.send('Cart or product not specified')
+    }
+})
