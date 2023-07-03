@@ -1,5 +1,6 @@
 import express from 'express';
 import ProductManager from '../classes/productManager.js'
+import upload from '../services/uploader.js';
 import {io} from '../app.js'
 
 const router = express.Router();
@@ -52,14 +53,13 @@ router.get('/:pid', (req, res) => {
 
 
 // POSTS
-router.post('/', (req, res) => {
+router.post('/', upload.single('image'),(req, res) => {
     let body = req.body;
     if(body) {
         manager.addProduct(body).then(result => {
             res.send(result)
             if(result.status==="success"){
                 manager.getProducts().then(result=>{
-                    console.log(result);
                     io.emit('addProduct',result);
                 })
             }

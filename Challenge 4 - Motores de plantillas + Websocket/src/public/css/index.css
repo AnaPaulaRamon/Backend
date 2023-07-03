@@ -8,7 +8,7 @@ body {
     padding: 1rem 0 1rem 0;
 }
 
-#feedback-form {
+#register-form {
     max-width: 70%;
     margin: 0 auto;
     background-color: #fcfcfc;
@@ -18,21 +18,21 @@ body {
     font-size: large;
   }
   
-  #feedback-form * {
+  #register-form * {
       box-sizing: border-box;
   }
   
-  #feedback-form h2{
+  #register-form h2{
     text-align: center;
     margin-bottom: 30px;
   }
   
-  #feedback-form input {
+  #register-form input {
     margin-bottom: 15px;
     font-size: large;
   }
   
-  #feedback-form input {
+  #register-form input {
     display: block;
     height: 42px;
     padding: 6px 16px;
@@ -41,16 +41,16 @@ body {
     background-color: #f3f3f3;
   }
   
-  #feedback-form label {
+  #register-form label {
     color: #777;
     font-size: 0.8em;
   }
   
-  #feedback-form input[type=checkbox] {
+  #register-form input[type=checkbox] {
     float: left;
   }
   
-  #feedback-form button[type=submit] {
+  #register-form button[type=submit] {
     display: block;
     margin: 20px auto 0;
     width: 180px;
@@ -81,14 +81,16 @@ body {
     margin: 0 auto;
   }
   
-  .cards {
+  ul.cards,
+  #cards {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 1rem;
+    padding: 1rem;
   }
   
+  li.cards_item,
   .cards_item {
     display: flex;
     padding: 1rem;
@@ -96,13 +98,14 @@ body {
   
   .card_image {
     position: relative;
-    max-height: 250px;
+    height: 250px;
+    width: 100%;
   }
   
   .card_image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
   
   .card_price {
@@ -139,17 +142,26 @@ body {
   }
   
   @media (min-width: 40rem) {
+    li.cards_item,
     .cards_item {
       width: 50%;
     }
   }
   
   @media (min-width: 56rem) {
+    li.cards_item,
     .cards_item {
       width: 33.3333%;
     }
   }
   
+  @media (min-width: 76rem) {
+    li.cards_item,
+    .cards_item {
+      width: 33.3333%;
+      display: inline-grid;
+    }
+  }
   .card {
     background-color: white;
     border-radius: 0.25rem;

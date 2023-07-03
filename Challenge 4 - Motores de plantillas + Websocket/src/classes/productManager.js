@@ -65,6 +65,10 @@ class ProductManager {
     }
 
     async addProduct(prod) {
+        let auxThumbnails = prod.thumbnails;
+        auxThumbnails = auxThumbnails.replace(/\s+/g, '');
+        let thumbailsArray = auxThumbnails.split(/[|,;,,]/);
+        prod.thumbnails = thumbailsArray;
         let {title, description, price, code, stock, status, category} = prod;
         if(title && description && price && code && stock && status && category) {
             try {

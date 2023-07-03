@@ -5,6 +5,7 @@ import productsRouter from './routes/products.js';
 import ProductManager from './classes/productManager.js';
 import __dirname from './utils.js';
 import {Server} from 'socket.io';
+import multer from 'multer';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -32,6 +33,17 @@ app.use((req,res,next)=>{
     next();
 })
 
+const storage = multer.diskStorage({
+    destination: (req,file,cb) => {
+        cb(null, 'images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + file.originalname)
+    }
+})
+
+const upload = multer({storage: storage})
+
 app.get('/', (req,res) => {
     prodContainer.getProducts().then(result=>{
         let info = result.message;
@@ -53,12 +65,16 @@ app.get('/realtimeproducts',(req,res)=>{
     })
 })
 
+
+app.post('/upload', upload.single('image'), (req,res) => {
+    res.send('Image Uploaded')
+})
+
 //socket
 io.on('connection', async socket=>{
     console.log(`El socket ${socket.id} se ha conectado`)
-    // let pets = await contenedor.getAllPets();
-    // socket.emit('deliverPets',pets);
-    // socket.emit('addProduct', 'hey there, this is the server')
-    socket.emit('welcome', 'hey it is me')
+    socket.emit('welcome', '')
+    let products = await prodContainer.getProducts();
+    socket.emit('addProduct',products);
 
 })
