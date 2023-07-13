@@ -1,0 +1,20 @@
+<ul class="cards">
+    {{#if products}}
+    {{#each products}}
+    <li class="cards_item">
+        <div class="card">
+            <div class="card_image">
+                 <img src={{this.thumbnails.[0]}}>
+                 <span class="card_price"><span>$</span>{{this.price}}</span>
+            </div>
+            <div class="card_content">
+                <h2 class="card_title">{{this.title}}</h2>
+                <div class="card_text">
+                  <p>{{this.description}}</p>
+                </div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+    {{/if}}
+</ul>

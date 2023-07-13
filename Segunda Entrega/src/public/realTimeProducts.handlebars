@@ -1,0 +1,40 @@
+<div id="realtimeproducts-container">
+<div class="form-container">
+    <form id="register-form" action="/api/products" method="POST" enctype="multipart/form-data">
+      <h2 class="header">Register New Product</h2>
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="description" placeholder="Description">
+        <input type="number" placeholder="Price" name="price">
+        <input type="text" placeholder="Code" name="code">
+        <input type="number" placeholder="Stock" name="stock">
+        <input type="text" placeholder="Status" name="status">
+        <input type="text" placeholder="Category" name="category">
+        <input type="text" placeholder="Thumbnails" name="thumbnails">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div id="cards">
+    {{#if products}}
+    {{#each products}}
+    <li class="cards_item">
+        <div class="card">
+            <div class="card_image">
+                 <img src={{this.thumbnails.[0]}}>
+                 <span class="card_price"><span>$</span>{{this.price}}</span>
+            </div>
+            <div class="card_content">
+                <h2 class="card_title">{{this.title}}</h2>
+                <div class="card_text">
+                  <p>{{this.description}}</p>
+                </div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+    {{/if}}
+</div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/index.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
